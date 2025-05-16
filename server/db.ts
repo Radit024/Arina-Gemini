@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { MongoClient, Db } from "mongodb";
 import * as schema from "@shared/schema";
 
@@ -35,9 +36,6 @@ function getDb(): Db {
   }
   return db;
 }
-
-// This file is only responsible for MongoDB connection and initialization.
-// All API endpoints should be defined in server/routes.ts and use the storage abstraction.
 
 // Graceful shutdown
 process.on("SIGINT", async () => {
